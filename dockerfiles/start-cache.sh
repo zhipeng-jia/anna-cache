@@ -38,9 +38,11 @@ cd build && make -j4 && cd ..
 
 # Do not start the server until conf/anna-config.yml has been copied onto this
 # pod -- if we start earlier, we won't now how to configure the system.
-while [[ ! -f "conf/anna-config.yml" ]]; do
-  continue
-done
+# while [[ ! -f "conf/anna-config.yml" ]]; do
+#   continue
+# done
+
+cp conf/anna-config-template.yml conf/anna-config.yml
 
 echo -e "user:" >> conf/anna-config.yml
 echo -e "    ip: $IP" >> conf/anna-config.yml
