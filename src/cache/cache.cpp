@@ -119,7 +119,7 @@ void send_error_response(RequestType type, const Address &response_addr,
 }
 
 void run(KvsClientInterface *client, Address ip, unsigned thread_id) {
-  string log_file = "cache_log_" + std::to_string(thread_id) + ".txt";
+  string log_file = "/tmp/log/cache_" + std::to_string(thread_id) + ".log";
   string log_name = "cache_log_" + std::to_string(thread_id);
   auto log = spdlog::basic_logger_mt(log_name, log_file, true);
   log->flush_on(spdlog::level::info);
